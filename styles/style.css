@@ -1,0 +1,230 @@
+/* --------------------------- COMMON -------------------------------*/
+
+@font-face {
+  font-family: 'square';
+  src: url('../fonts/FFFFORWA.TTF');
+}
+
+@font-face {
+  font-family: 'arcade';
+  src: url('../fonts/ARCADECLASSIC.TTF');
+}
+
+body {
+  background-color: #444;
+  width: 70%;
+  height: 100vh;
+  min-height: 720px;
+  min-width: 800px;
+  font-family: square, Arial, Helvetica, sans-serif;
+  color: cornsilk;
+  user-select: none;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'square';
+  font-size: 2rem;
+  position: relative;
+}
+
+h2 {
+  padding: 2rem 1rem;
+}
+
+p {
+  font-size: 1.3em;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template: 80px 1fr / 250px minmax(300px, 1fr);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+/* --------------------------- PROMPT -------------------------------*/
+
+#prompt {
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  font-size: 3.5rem;
+  /* background-color: rgb(255, 71, 86); */
+  color: cornsilk;
+  z-index: 10;
+}
+
+/* --------------------------- NAVBAR -------------------------------*/
+
+#navbar {
+  background-color: blueviolet;
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+/* --------------------------- SIDEBAR -------------------------------*/
+
+#sidebar {
+  background-color: cadetblue;
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.sideGrid {
+  display: grid;
+  grid-template-rows: 150px 1fr 1fr 90px 90px;
+}
+
+#sliderDiv {
+  display: none;
+  grid-area: 2 / 1 / 4 / 2;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+#clickDiv {
+  display: none;
+  grid-area: 2 / 1 / 4 / 2;
+}
+
+#clickCounter {
+  width: 82px;
+  height: 80px;
+  margin: 0.5rem;
+  background-color: rgb(255, 0, 157);
+  font-size: 3rem;
+}
+
+#challengeDiv {
+  display: none;
+  grid-area: 2 / 1 / 4 / 2;
+  justify-content: space-around;
+  pointer-events: none;
+}
+
+#challengeDivButtons {
+  width: 100%;
+  height: 70%;
+  justify-content: space-evenly;
+}
+
+.modeSelected {
+  width: 100%;
+  padding: 1rem;
+  background-color: cornflowerblue;
+  transform: translateY(-30px);
+  transition-property: width, transform;
+  transition-duration: 0.2s;
+}
+
+#gameMode {
+  margin: 1rem 0;
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 5;
+  pointer-events: none;
+  justify-content: space-evenly;
+}
+
+#mode {
+  display: block;
+  position: relative;
+  top: 0px;
+}
+
+/* --------------------------- MAIN -------------------------------*/
+
+#main {
+  position: relative;
+  background-color: rgb(93, 103, 246);
+  grid-area: 2 / 2 / 3 / 3;
+  padding: 2%;
+  font-size: 3rem;
+}
+
+#squarebox {
+  position: relative;
+  display: none;
+  width: 70%;
+  max-width: 800px;
+  max-height: 800px;
+  /* background: rgb(40, 40, 40); */
+  background-image: url('../art/tuto.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 3px solid rgb(40, 40, 40);
+  /* filter: grayscale(1); */
+  transition: filter linear 0.5s;
+}
+
+#squarebox::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%; /* Making a resonsive Square baby! */
+}
+
+#squarecontent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.littleSquare {
+  margin: 1px;
+  color: rgba(0, 0, 0, 0.3);
+  font-family: arcade;
+  cursor: pointer;
+  pointer-events: auto;
+  font-size: 20vw;
+  overflow: hidden;
+  transition: border ease-in-out 250ms, transform ease-in-out 100ms,
+    background-color ease-in-out 250ms;
+}
+
+.littleSquare:active {
+  transform: scale(1);
+}
+
+/* --------------------------- RESPONSIVE -------------------------------*/
+
+/* @media screen and (max-width: 900px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    .flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .grid {
+        grid-template: 7% 15% 1fr 15% / 1fr;
+    }
+    
+    #sidebar {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    #info {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    
+    #main {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+} */

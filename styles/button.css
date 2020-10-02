@@ -1,0 +1,111 @@
+.button {
+    padding: 1rem;
+    margin: 0 auto;
+    width: 80% ;
+    background-color: coral;
+    color: rgba(40, 40, 40, 0.308);
+    border-bottom: 0.2rem solid rgba(40, 40, 40, 0.308);;
+    cursor: pointer;
+    transition: border ease-in-out 200ms;
+    pointer-events: auto;
+    transition-property: width, transform;
+    transition-duration: 0.2s; 
+    align-self: center;
+    justify-self: center;
+}
+
+.button_selected {
+    width: 100%;
+    border-bottom: 0.2rem solid transparent;
+    cursor: pointer;
+    pointer-events: none;
+    color: cornsilk;
+}
+
+.button:hover {
+    border-bottom: 0.2rem solid rgb(80, 197, 64);
+    color: cornsilk;
+}
+
+.button:active {
+    transform: translateY(0.2rem);
+    border-bottom: 0.2rem solid rgba(255, 255, 255, 0);
+}
+
+.challenge {
+    background-color: cornflowerblue;
+}
+
+.challenge:hover {
+    border-bottom: 0.2rem solid rgb(67, 225, 246);
+}
+
+
+#go_button {
+    display: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: none;
+    width: 9rem;
+    height: 9rem;
+    font-size: 3.5rem;
+    background-color: rgb(71, 99, 255);
+    color: cornsilk;
+    padding: 0;
+    padding-left: 0.4rem;
+    animation: breath 1s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes breath {
+    0% {
+        transform:scale(1);
+    }
+    50% {
+        transform:scale(1.1);
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+    100% {
+        transform:scale(1);
+        
+    }
+}
+
+
+#reset {
+    height: 70px;
+    width: 120px;
+    display: none;
+    background-color: gray;
+    border-bottom: 0.2rem solid rgb(71, 71, 71);
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+#restart {
+    height: 70px;
+    width: 120px;
+    display: none;
+    background-color: rgb(54, 160, 77);
+    border-bottom: 0.2rem solid rgb(71, 71, 71);
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+#reset:hover {
+    border-bottom: 0.2rem solid cornsilk;
+}
+
+#restart:hover {
+    border-bottom: 0.2rem solid cornsilk;
+}
+
+#reset:active {
+    border-bottom: 0.2rem solid transparent;
+}
+
+#restart:active {
+    border-bottom: 0.2rem solid transparent;
+}
